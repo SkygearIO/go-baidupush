@@ -15,8 +15,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/skygeario/skygear-server/pkg/server/skyversion"
 )
 
 var timeNow = func() time.Time { return time.Now().UTC() }
@@ -311,5 +309,5 @@ func urlValues(r request) url.Values {
 }
 
 func uaString() string {
-	return fmt.Sprintf("BCCS_SDK/3.0 (%v; %v) Go/%v (skygear-server %v)", runtime.GOOS, runtime.GOARCH, runtime.Version(), skyversion.Version())
+	return fmt.Sprintf("BCCS_SDK/3.0 (%v; %v) Go/%v go-baidupush/%v)", runtime.GOOS, runtime.GOARCH, runtime.Version(), BaiduPushPackageVersion)
 }
